@@ -1,35 +1,26 @@
-# vue-starter-kit-for-appwrite
+# Vue starter kit with Appwrite
 
-This template should help get you started developing with Vue 3 in Vite.
+Kickstart your Vue development with this ready-to-use starter project integrated with [Appwrite](https://www.appwrite.io)
 
-## Recommended IDE Setup
+## 🚀Getting started
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+###
+Clone the Project
+Clone this repository to your local machine using Git:
 
-## Customize configuration
+`git clone https://github.com/appwrite/starter-for-vue`
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🛠️ Development guid
+1. **Configure Appwrite**<br/>
+   Navigate to `.env` and update the values to match your Appwrite project credentials.
+2. **Customize as needed**<br/>
+   Modify the starter kit to suit your app's requirements. Adjust UI, features, or backend
+   integrations as per your needs.
+3. **Install dependencies**<br/>
+   Run `npm install` to install all dependencies.
+4. **Run the app**<br/>
+   Start the project by running `npm run dev`.
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## 💡 Additional notes
+- This starter project is designed to streamline your Vue development with Appwrite.
+- Refer to the [Appwrite documentation](https://appwrite.io/docs) for detailed integration guidance.
