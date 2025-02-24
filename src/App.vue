@@ -12,6 +12,7 @@ const showLogs = ref(false)
 const detailsRef = ref(null)
 
 const updateHeight = () => {
+  console.log('update height')
   if (detailsRef.value) {
     detailHeight.value = detailsRef.value.clientHeight
   }
@@ -86,7 +87,7 @@ const sendPing = async () => {
 
     <section
       class="u-flex u-flex-vertical u-main-center u-cross-center u-padding-16"
-      style="backdrop-filter: blur(1px)"
+      style="backdrop-filter: blur(1px); height: 200px"
     >
       <div v-if="status === 'loading'" class="u-flex u-cross-center u-gap-16">
         <div class="loader is-small"></div>
@@ -160,6 +161,7 @@ const sendPing = async () => {
       style="border: 1px solid hsl(var(--color-neutral-10)); bottom: 0"
     >
       <details
+        @toggle="updateHeight"
         ref="detailsRef"
         class="collapsible-wrapper u-padding-0"
         style="background-color: hsl(var(--color-neutral-0))"
