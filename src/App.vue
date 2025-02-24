@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
-import { client } from '@/lib/appwrite'
+import { client, getEndpoint, getProjectId, getProjectName } from '@/lib/appwrite'
 import { AppwriteException } from 'appwrite'
 import AppwriteSvg from '@/assets/appwrite.svg'
 import VueSvg from '@/assets/vue.svg'
@@ -12,7 +12,6 @@ const showLogs = ref(false)
 const detailsRef = ref(null)
 
 const updateHeight = () => {
-  console.log('update height')
   if (detailsRef.value) {
     detailHeight.value = detailsRef.value.clientHeight
   }
@@ -170,7 +169,41 @@ const sendPing = async () => {
         <summary class="collapsible-button u-padding-16">
           Logs <span v-if="logs.length" class="inline-tag">{{ logs.length }}</span>
         </summary>
-        <div class="collapsible-content">
+        <div class="collapsible-content u-flex u-flex-vertical-mobile u-cross-stretch u-padding-0">
+          <div
+            class="table is-table-row-medium-size u-stretch"
+            :style="{ '--p-border-radius': 0, inlineSize: 'unset' }"
+          >
+            <div class="table-thead" :style="{ backgroundColor: 'hsl(var(--color-neutral-5))' }">
+              <div class="table-row">
+                <div class="table-thead-col">
+                  <span class="u-color-text-offline">Project</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid-box u-padding-16"
+              :style="{
+                '--grid-gap': '2rem',
+                '--grid-item-size-small-screens': '10rem',
+                '--grid-item-size': '10rem',
+                backgroundColor: 'hsl(var(--color-neutral-0))',
+              }"
+            >
+              <div class="u-grid u-grid-vertical u-gap-8">
+                <p class="u-color-text-offline">Endpoint</p>
+                <p class="body-text-2">{{ getEndpoint() }}</p>
+              </div>
+              <div class="u-grid u-grid-vertical u-gap-8">
+                <p class="u-color-text-offline">Project ID</p>
+                <p class="body-text-2">{{ getProjectId() }}</p>
+              </div>
+              <div class="u-grid u-grid-vertical u-gap-8">
+                <p class="u-color-text-offline">Project name</p>
+                <p class="body-text-2">{{ getProjectName() }}</p>
+              </div>
+            </div>
+          </div>
           <table class="table is-table-row-small-size" :style="{ '--p-border-radius': 0, flex: 2 }">
             <thead class="table-thead" :style="{ backgroundColor: 'hsl(var(--color-neutral-5))' }">
               <tr
