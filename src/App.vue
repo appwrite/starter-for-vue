@@ -130,12 +130,10 @@ const sendPing = async () => {
         </div>
       </div>
       <div v-if="status === 'success'">
-        <h1 class="text-2xl font-light text-[#2D2D31]">Congratulations!</h1>
+        <h1 class="font-[Poppins] text-2xl font-light text-[#2D2D31]">Congratulations!</h1>
       </div>
       <div v-if="status !== 'success' && status !== 'loading'">
-        <h1 class="font-[Poppins, arial, sans-serf] text-2xl font-light text-[#2D2D31]">
-          Check connection
-        </h1>
+        <h1 class="font-[Poppins] text-2xl font-light text-[#2D2D31]">Check connection</h1>
       </div>
       <p class="mt-2 mb-8">
         <span v-if="status === 'success'">You connected your app successfully.</span>
